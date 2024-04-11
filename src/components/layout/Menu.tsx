@@ -29,22 +29,22 @@ function Menu() {
         <nav>
             <ul className="flex items-center space-x-4">
                 <li>
-                    <Link to="/" className="text-white ease-in duration-200 underline-offset-8 hover:underline" activeClassName="underline">
+                    <Link to="/" className="text-white ease-in duration-200 underline-offset-8 hover:underline">
                         Home
                     </Link>
                 </li>
                 <li>
-                    <Link to="/sobre-a-empresa" className="text-white ease-in duration-200 underline-offset-8 hover:underline" activeClassName="underline">
+                    <Link to="/sobre-a-empresa" className="text-white ease-in duration-200 underline-offset-8 hover:underline">
                         Empresa
                     </Link>
                 </li>
                 <li>
-                    <Link to="/servicos" className="text-white ease-in duration-200 underline-offset-8 hover:underline" activeClassName="underline">
+                    <Link to="/servicos" className="text-white ease-in duration-200 underline-offset-8 hover:underline">
                         Serviços
                     </Link>
                 </li>
                 <li>
-                    <Link to="/contato" className="text-white ease-in duration-200 underline-offset-8 hover:underline" activeClassName="underline">
+                    <Link to="/contato" className="text-white ease-in duration-200 underline-offset-8 hover:underline">
                         Contato
                     </Link>
                 </li>
