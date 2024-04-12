@@ -162,6 +162,10 @@
         height: 38px;
     }
 
+    .card {
+        border-top-right-radius: 0;
+    }
+
     .card:active {
         transform: scale(1) translateZ(0);
         box-shadow: none;
