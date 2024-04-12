@@ -1,22 +1,11 @@
-import { useRef } from 'react';
-import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
-} from "@/components/ui/carousel";
 import { FaProjectDiagram } from "react-icons/fa";
 import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { GrSystem } from "react-icons/gr";
-import Autoplay from "embla-carousel-autoplay";
+import { HiMiniComputerDesktop } from "react-icons/hi2";
 import Card from '@/components/ui/card';
+import PlatformBenefits from '@/pages/components/landing-page/platformBenefits';
+import Reviews from '@/pages/components/landing-page/reviews';
 
 function LandingPage() {
-    const plugin = useRef(
-        Autoplay({ delay: 3000, stopOnInteraction: true })
-    )
-
     return (
         <>
             <section className="flex items-center w-full h-96 bg-[url('https://via.placeholder.com/1000')] bg-center">
@@ -29,58 +18,27 @@ function LandingPage() {
                     </p>
                 </div>
             </section>
-            <section className="flex justify-center items-center gap-4 py-4 w-full h-fit bg-gray-100 md:h-96">
-                <Card title="Projetos" className="variant-yellow">
-                    <FaProjectDiagram className="w-6 h-6 md:w-16 md:h-16"/>
-                </Card>
-                <Card title="Consultoria" className="variant-blue">
-                    <AiOutlineFundProjectionScreen className="w-6 h-6 md:w-16 md:h-16"/>
-                </Card>
-                <Card title="Sistemas Personalizados" className="variant-gray">
-                    <GrSystem className="w-6 h-6 md:w-16 md:h-16"/>
-                </Card>
-            </section>
-            <section className="flex flex-col justify-center gap-5 w-full h-fit p-5">
-                <h3 className="text-2xl font-bold text-center">
-                    Avaliações
+            <section className="flex flex-col justify-center items-center gap-4 my-5 py-4 w-full h-fit bg-blue-900 md:h-fit">
+                <h3 className="underline-offset-8 underline text-2xl font-bold my-5 text-white">
+                     Serviços
                 </h3>
-                <Carousel plugins={[plugin.current]} onMouseEnter={plugin.current.stop}
-                          onMouseLeave={plugin.current.reset}>
-                    <CarouselContent>
-                        <CarouselItem className="flex flex-col items-center justify-center gap-4">
-                            {/*<img src="https://via.placeholder.com/150" alt="Imagem 1"/>*/}
-                            <p>
-                                lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet,
-                                lorem
-                            </p>
-                            <p>
-                                Empresa X - Lorem ipsum
-                            </p>
-                        </CarouselItem>
-                        <CarouselItem className="flex flex-col items-center justify-center gap-4">
-                            {/*<img src="https://via.placeholder.com/150" alt="Imagem 1"/>*/}
-                            <p>
-                                lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet,
-                                lorem
-                            </p>
-                            <p>
-                                Empresa Y - Lorem ipsum
-                            </p>
-                        </CarouselItem>
-                        <CarouselItem className="flex flex-col items-center justify-center gap-4">
-                            {/*<img src="https://via.placeholder.com/150" alt="Imagem 1"/>*/}
-                            <p>
-                                lorem ipsum dolor sit amet, consectetur adipiscing elit. lorem ipsum dolor sit amet,
-                                lorem
-                            </p>
-                            <p>
-                                Empresa Z - Lorem ipsum
-                            </p>
-                        </CarouselItem>
-                    </CarouselContent>
-                    <CarouselPrevious className="absolute top-50 left-50 md:top-0 md:left-10"/>
-                    <CarouselNext className="absolute top-50 right-0 md:top-0 md:right-10"/>
-                </Carousel>
+                <div className="flex justify-center items-center gap-4 w-full mb-5">
+                    <Card title="Projetos" className="variant-yellow">
+                        <FaProjectDiagram className="w-6 h-6 md:w-16 md:h-16"/>
+                    </Card>
+                    <Card title="Consultoria" className="variant-blue">
+                        <AiOutlineFundProjectionScreen className="w-6 h-6 md:w-16 md:h-16"/>
+                    </Card>
+                    <Card title="Sistemas Personalizados" className="variant-gray">
+                        <HiMiniComputerDesktop className="w-6 h-6 md:w-16 md:h-16"/>
+                    </Card>
+                </div>
+            </section>
+            <section className="bg-gray-900 text-white">
+                <PlatformBenefits/>
+            </section>
+            <section className="flex bg-gray-900 text-white flex-col justify-center border-t-4 gap-5 w-full h-fit p-5">
+                <Reviews/>
             </section>
         </>
     );

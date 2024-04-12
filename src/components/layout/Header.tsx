@@ -5,6 +5,7 @@ import MenuMobile from '@/components/layout/MenuMobile';
 
 function Header() {
     const [isMobile, setIsMobile] = useState(false);
+    const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
         const handleResize = () => {
@@ -23,8 +24,20 @@ function Header() {
         };
     }, []);
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const currentScrollPos = window.pageYOffset;
+            const isTop = currentScrollPos < 100; // ajuste este valor conforme necessário
+
+            setIsScrolled(!isTop);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
     return (
-        <header className="w-full h-20 bg-blue-800 sticky top-0 z-50 shadow-lg md:h-24">
+        <header className={`w-full h-20 ease-in duration-200 ${isScrolled && !isMobile ? 'bg-transparent backdrop-blur-sm md:h-20' : 'bg-blue-800'} sticky top-0 z-50 shadow-lg md:h-24`}>
             <div className="flex items-center justify-between h-full p-4 md:w-4/5 md:p-0 md:mx-auto md:my-0">
                 <h1>
                     <Logo width={isMobile ? 48 : 64} height={isMobile ? 48 : 64}/>
