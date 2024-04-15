@@ -30,7 +30,7 @@ function Footer() {
                 <div className="flex flex-col items-center justify-between w-4/5 gap-8 md:flex-row">
                     <div className="text-center w-full md:w-2/3">
                         <h4 className="text-lg font-bold md:text-2xl">
-                            Deixe seu e-mail para entrarmos em contato
+                            Digite seu e-mail para receber uma proposta de serviço
                         </h4>
                         <p className="hidden text-gray-300 text-md sm:mt-4 sm:block">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae dolor officia blanditiis

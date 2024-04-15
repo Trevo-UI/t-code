@@ -30,7 +30,7 @@ function Menu() {
             <ul className="flex items-center space-x-4">
                 <li>
                     <Link to="/" className="text-white ease-in duration-200 underline-offset-8 hover:underline">
-                        Home
+                        início
                     </Link>
                 </li>
                 <li>
