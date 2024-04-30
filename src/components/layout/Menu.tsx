@@ -1,7 +1,11 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
 
-function Menu() {
+interface MenuProps {
+    setPage: (value: string) => void;
+}
+
+function Menu({ setPage }: MenuProps) {
     const location = useLocation();
 
     useEffect(() => {
@@ -19,6 +23,7 @@ function Menu() {
         };
 
         handleNavLink();
+        setPage(window.location.pathname);
 
         return () => {
             window.removeEventListener('popstate', handleNavLink);
@@ -29,22 +34,22 @@ function Menu() {
         <nav>
             <ul className="flex items-center space-x-4">
                 <li>
-                    <Link to="/" className="text-white ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link to="/" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
                         início
                     </Link>
                 </li>
                 <li>
-                    <Link to="/sobre-a-empresa" className="text-white ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link to="/sobre-a-empresa" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
                         Empresa
                     </Link>
                 </li>
                 <li>
-                    <Link to="/servicos" className="text-white ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link to="/servicos" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
                         Serviços
                     </Link>
                 </li>
                 <li>
-                    <Link to="/contato" className="text-white ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link to="/contato" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
                         Contato
                     </Link>
                 </li>

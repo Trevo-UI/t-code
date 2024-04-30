@@ -5,7 +5,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 function Reviews() {
     const plugin = useRef(
-        Autoplay({ delay: 3000, stopOnInteraction: true })
+        Autoplay({ delay: 5000, stopOnInteraction: false, loop: true })
     )
 
     return (
@@ -13,8 +13,12 @@ function Reviews() {
             <h3 className="text-2xl font-bold text-center mb-5 underline-offset-8 underline">
                 Avaliações
             </h3>
-            <Carousel plugins={[plugin.current]} onMouseEnter={plugin.current.stop}
-                      onMouseLeave={plugin.current.reset}>
+            <Carousel
+                plugins={[plugin.current]}
+                opts={{
+                    loop: true,
+                }}
+            >
                 <CarouselContent>
                     <CarouselItem className="flex flex-col items-center justify-center">
                         <p className="mb-4">

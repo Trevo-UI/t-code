@@ -1,9 +1,10 @@
-import { FaProjectDiagram } from "react-icons/fa";
-import { AiOutlineFundProjectionScreen } from "react-icons/ai";
-import { HiMiniComputerDesktop } from "react-icons/hi2";
 import Card from '@/components/ui/card';
 import PlatformBenefits from '@/pages/components/landing-page/platformBenefits';
 import Reviews from '@/pages/components/landing-page/reviews';
+import consultancy from '@/assets/icons/consultoria.svg';
+import projects from '@/assets/icons/projeto.svg';
+import customizationIcon from '@/assets/icons/customizacao.svg';
+import site from '@/assets/icons/site.svg';
 
 function LandingPage() {
     return (
@@ -22,15 +23,18 @@ function LandingPage() {
                 <h3 className="underline-offset-8 underline text-2xl font-bold my-5 text-white">
                      Serviços
                 </h3>
-                <div className="flex justify-center items-center gap-4 w-full mb-5">
-                    <Card title="Projetos" className="variant-yellow">
-                        <FaProjectDiagram className="w-6 h-6 md:w-16 md:h-16"/>
+                <div className="flex-wrap md:flex-nowrap flex justify-center items-center gap-3 w-full mb-5 md:p-2">
+                    <Card title="Customização" className="variant-gray rounded-md md:rounded-sm">
+                        <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={customizationIcon} alt="Customização" title="Customização" width={16} height={16}/>
                     </Card>
-                    <Card title="Consultoria" className="variant-blue">
-                        <AiOutlineFundProjectionScreen className="w-6 h-6 md:w-16 md:h-16"/>
+                    <Card title="Consultoria" className="variant-gray rounded-md md:rounded-sm">
+                        <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={consultancy} alt="Consultoria" title="Consultoria" width={16} height={16}/>
                     </Card>
-                    <Card title="Sistemas Personalizados" className="variant-gray">
-                        <HiMiniComputerDesktop className="w-6 h-6 md:w-16 md:h-16"/>
+                    <Card title="Projetos" className="variant-gray rounded-md md:rounded-sm">
+                        <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={projects} alt="Projetos" title="Projetos" width={16} height={16}/>
+                    </Card>
+                    <Card title="Site" className="variant-gray w-11/12 rounded-md md:w-[30%] md:rounded-sm">
+                        <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={site} alt="Site" title="Site" width={16} height={16}/>
                     </Card>
                 </div>
             </section>

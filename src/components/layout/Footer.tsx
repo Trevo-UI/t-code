@@ -103,7 +103,7 @@ function Footer() {
                                 <FaLinkedinIn className="text-black w-5 h-5"/>
                             </a>
                             <a className="flex items-center justify-center rounded-full bg-white w-8 h-8 p-1 hover:opacity-80"
-                               href="https://api.whatsapp.com/send?phone=5547988339861&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa"
+                               href="https://api.whatsapp.com/send?phone=5547984985607&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa"
                                target="_blank">
                                 <BsWhatsapp className="text-black w-5 h-5"/>
                             </a>

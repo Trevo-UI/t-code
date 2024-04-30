@@ -25,11 +25,13 @@
 }
 
 .variant-gray {
-    --bg-color: #7786b9;
+    --bg-color: #cecfd5;
     --bg-color-light: #e3f2fd;
     --text-color-hover: #ffffff;
     --box-shadow-color: rgba(76, 80, 86, 0.48);
 }
+
+
 
 .card {
     width: 30%;
