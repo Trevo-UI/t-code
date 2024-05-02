@@ -14,12 +14,12 @@ import {
 
 function MenuMobile() {
     return (
-        <Menubar className="flex items-center justify-center p-2 w-10 h-10 bg-blue-800 border-0">
+        <Menubar className="flex items-center justify-center p-2 w-10 h-10 bg-blue-700 border-0">
             <MenubarMenu>
                 <MenubarTrigger className="p-0 w-full h-full focus:bg-transparent data-[state=open]:bg-accent[data-state=open] bg-transparent">
                     <CgMenu className="text-white w-full h-full"/>
                 </MenubarTrigger>
-                <MenubarContent className="bg-blue-800 w-screen rounded-none mt-5 border-none">
+                <MenubarContent className="bg-blue-700 w-screen rounded-none mt-5 border-none">
                     <Link to="/" className="text-white">
                         <MenubarItem>
                             início

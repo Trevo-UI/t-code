@@ -8,16 +8,16 @@ app.post('/api/send-email', function (_a) {
     var req = _a.req, res = _a.res;
     var _b = req.body, name = _b.name, email = _b.email, phone = _b.phone, option = _b.option, message = _b.message;
     var transporter = nodemailer_1.default.createTransport({
-        host: 'smtp.hostinger.com',
+        host: process.env.HOST,
         port: 587,
         secure: false,
         auth: {
-            user: 'comercial@tcodesolucoes.com',
-            pass: '@2a8eQUZh8hHQIA0L6kf4'
+            user: process.env.EMAIL,
+            pass: process.env.PASSWORD
         }
     });
     var mailOptions = {
-        from: '"T-Code Soluções" <comercial@tcodesolucoes.com>',
+        from: '"T-Code Soluções" <process.env.EMAIL>',
         to: 'comercial@tcodesolucoes.com',
         subject: "option: ".concat(option),
         text: "Name: ".concat(name, "\nEmail: ").concat(email, "\nPhone: ").concat(phone, "\nMessage: ").concat(message)

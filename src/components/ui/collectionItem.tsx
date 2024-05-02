@@ -14,7 +14,7 @@ function collectionItem({ imageMain, imageSecondary, title, description }: colle
               <img src={imageMain} alt="ilustração do serviço" className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0"/>
               <img src={imageSecondary} alt="ilustração do serviço" className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100"/>
           </div>
-          <div className="bg-blue-800 p-2">
+          <div className="bg-blue-700 p-2">
               <h3 className="text-md text-white md:text-lg group-hover:underline group-hover:underline-offset-4">
                   {title}
               </h3>

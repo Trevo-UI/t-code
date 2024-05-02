@@ -8,7 +8,7 @@ function Structure() {
     return (
         <>
             <Header/>
-            <main className="w-full h-fit">
+            <main className="w-full h-fit bg-gray-100">
                 {router()}
             </main>
             <Footer/>

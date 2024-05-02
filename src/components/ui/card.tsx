@@ -1,22 +1,27 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './styles/card.css';
 
 interface Props {
     title: string;
     children: React.ReactNode;
     className?: string;
+    link?: string;
 }
 
-function Card({ title, children, className }: Props) {
+function Card({ title, children, className, link }: Props) {
     return (
         <>
-            <span className={`card ${className}`}>
+            <Link to={link ? link : '/'} className={`relative card ${className}`}>
                 <div className="overlay" ></div>
                 <div className="circle">
                     { children }
                 </div>
-                <p>{title}</p>
-            </span>
+                <p className="text-lg">{title}</p>
+                <span className="absolute bottom-5 left-50 w-20 text-center bg-gray-300 p-2 rounded-lg text-black text-md md:text-lg">
+                    Ver +
+                </span>
+            </Link>
         </>
     )
 }

@@ -10,33 +10,17 @@
     }
 }
 
-.variant-yellow {
-    --bg-color: #111827FF;
-    --bg-color-light: #e3f2fd;
-    --text-color-hover: #ffffff;
-    --box-shadow-color: rgba(76, 80, 86, 0.48);
-}
-
-.variant-blue  {
-    --bg-color: #426cff;
-    --bg-color-light: #e3f2fd;
-    --text-color-hover: #ffffff;
-    --box-shadow-color: rgba(76, 80, 86, 0.48);
-}
-
 .variant-gray {
     --bg-color: #cecfd5;
-    --bg-color-light: #e3f2fd;
-    --text-color-hover: #ffffff;
+    --bg-color-light: #d9d9d9;
+    --text-color-hover: #000000;
     --box-shadow-color: rgba(76, 80, 86, 0.48);
 }
-
-
 
 .card {
     width: 30%;
     height: 321px;
-    background: #ffffff;
+    background: #1d4ed8;
     border-top-right-radius: 10px;
     overflow: hidden;
     display: flex;
@@ -80,6 +64,11 @@
     color: var(--text-color-hover);
 }
 
+.card:hover span {
+    background: #1d4ed8;
+    color: #ffffff;
+}
+
 .card:active {
     transform: scale(1) translateZ(0);
     box-shadow: 0 15px 24px rgba(0,0,0,0.11),
@@ -87,8 +76,7 @@
 }
 
 .card p {
-    font-size: 17px;
-    color: #4C5656;
+    color: #ffffff;
     margin-top: 30px;
     z-index: 30;
     transition: color 0.3s ease-out;
@@ -159,7 +147,6 @@
     .card p {
         display: flex;
         align-items: center;
-        font-size: 12px;
         font-weight: 700;
         text-align: center;
         height: 38px;
