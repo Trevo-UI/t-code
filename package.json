@@ -8,6 +8,7 @@
     "start": "run-p start:node start:vite",
     "start:node": "node src/api/server.cjs",
     "start:vite": "vite serve",
+    "vercel": "npm run start",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
