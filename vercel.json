@@ -5,9 +5,7 @@
     { "src": "vite", "use": "@vercel/node" }
   ],
   "routes": [
-    { "src": "/api/(.*)", "dest": "src/api/server.cjs" }
-  ],
-  "hooks": {
-    "postdeploy": "npm run vercel"
-  }
+    { "src": "/api/(.*)", "dest": "src/api/server.cjs" },
+    { "src": "/(.*)", "dest": "/vite/$1" }
+  ]
 }
