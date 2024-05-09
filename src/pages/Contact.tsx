@@ -1,32 +1,42 @@
-import { useState } from "react";
-import { BsWhatsapp } from "react-icons/bs";
-import axios from 'axios';
+import React, { useState } from 'react';
 
 function Contact() {
-    const [formData, setFormData] = useState({
-        name: "",
-        email: "",
-        phone: "",
-        option: "",
-        message: ""
-    });
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const [phone, setPhone] = useState('');
+    const [type, setType] = useState('');
+    const [message, setMessage] = useState('');
 
-    const handleChange = (e: any) => {
-        const { name, value } = e.target;
-        setFormData({ ...formData, [name]: value });
-    };
-
-    const handleSubmit = async (e: any) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+
+        const data = {
+            name,
+            email,
+            phone,
+            type,
+            message
+        };
+
         try {
-            await axios.post('/api/send-email', formData);
-            alert('Email sent successfully');
+            const response = await fetch('http://localhost:3001/send-email', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                alert('E-mail enviado com sucesso!');
+            } else {
+                alert('Erro ao enviar e-mail');
+            }
         } catch (error) {
-            console.error('Error sending email:', error);
-            alert('Error sending email');
+            console.error('Erro ao enviar e-mail:', error);
+            alert('Erro ao enviar e-mail');
         }
     };
-
 
     return (
         <section className="bg-gray-100 h-screen">
@@ -34,17 +44,18 @@ function Contact() {
                 <div className="grid grid-cols-1 gap-x-16 gap-y-8 lg:grid-cols-5">
                     <div className="lg:col-span-2 lg:py-12">
                         <h3 className="text-3xl font-bold text-gray-900">
-                            Contato
+                            Entre em Contato
                         </h3>
-                        <p className="max-w-xl text-lg text-gray-700">
-                            lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad  minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                        <p className="max-w-xl text-lg text-gray-500 mt-2">
+                            Estamos aqui para ouvir você! Se você tiver alguma dúvida, sugestão, ou apenas quiser dizer
+                            "oi", sinta-se à vontade para entrar em contato conosco. Nossa equipe está pronta para
+                            ajudar da melhor maneira possível. Preencha o formulário e entraremos em contato o mais rápido possível.
+                            Se preferir, você pode nos enviar uma mensagem diretamente pelo WhatsApp.
                         </p>
                         <div className="mt-8">
-                            <a href="https://api.whatsapp.com/send?phone=5547984985607&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa" className="text-2xl font-bold text-blue-700 flex items-center gap-2 hover:underline w-fit">
-                                <BsWhatsapp className="text-md"/>
-                                (47) 98498-5607
-                            </a>
-                            <address className="mt-2 not-italic">Rio do Sul, SC - 89160-000</address>
+                            <b>Horário de Atendimento:</b> Segunda a Sexta, das 9h às 18h. <br/>
+                            <address className="not-italic"><b>Endereço:</b> Rio do Sul, SC - 89160-000.</address>
+                            <b>Telefone:</b> <a className="hover:underline" href="tel:47984985607">(47) 98498-5607</a><br/>
                         </div>
                     </div>
                     <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
@@ -52,32 +63,39 @@ function Contact() {
                             <div>
                                 <label className="sr-only" htmlFor="name">Nome</label>
                                 <input
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                    className="w-full rounded-lg border border-gray-200 p-3 text-sm"
                                     placeholder="Nome"
                                     type="text"
                                     id="name"
-                                    value={formData.name}
-                                    onChange={handleChange}
+                                    value={name}
+                                    onChange={(e) => setName(e.target.value)}
                                 />
                             </div>
                             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
                                 <div>
                                     <label className="sr-only" htmlFor="email">Email</label>
-                                    <input className="w-full rounded-lg border-gray-200 p-3 text-sm" placeholder="Email" type="email" id="email"/>
+                                    <input
+                                        className="w-full rounded-lg border border-gray-200 p-3 text-sm"
+                                        placeholder="Email"
+                                        type="email"
+                                        id="email"
+                                        value={email}
+                                        onChange={(e) => setEmail(e.target.value)}
+                                    />
                                 </div>
                                 <div>
                                     <label className="sr-only" htmlFor="phone">Phone</label>
                                     <input
-                                        className="w-full rounded-lg border-gray-200 p-3 text-sm"
+                                        className="w-full rounded-lg border border-gray-200 p-3 text-sm"
                                         placeholder="Telefone"
                                         type="tel"
                                         id="phone"
-                                        value={formData.phone}
-                                        onChange={handleChange}
+                                        value={phone}
+                                        onChange={(e) => setPhone(e.target.value)}
                                     />
                                 </div>
                             </div>
-                            <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-3">
+                            <div className="grid grid-cols-1 gap-4 text-center sm:grid-cols-2">
                                 <div>
                                     <label htmlFor="Option1" className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white">
                                         <input
@@ -86,8 +104,8 @@ function Contact() {
                                             type="radio"
                                             name="option"
                                             value="Orçamento"
-                                            checked={formData.option === "Orçamento"}
-                                            onChange={handleChange}
+                                            checked={type === "Orçamento"}
+                                            onChange={(e) => setType(e.target.value)}
                                         />
                                         <span className="text-sm"> Orçamento </span>
                                     </label>
@@ -100,35 +118,26 @@ function Contact() {
                                             type="radio"
                                             name="option"
                                             value="Dúvidas"
-                                            checked={formData.option === "Dúvidas"}
-                                            onChange={handleChange}
+                                            checked={type === "Dúvidas"}
+                                            onChange={(e) => setType(e.target.value)}
                                         />
                                         <span className="text-sm"> Dúvidas </span>
-                                    </label>
-                                </div>
-                                <div>
-                                    <label htmlFor="Option3" className="block w-full cursor-pointer rounded-lg border border-gray-200 p-3 text-gray-600 hover:border-black has-[:checked]:border-black has-[:checked]:bg-black has-[:checked]:text-white">
-                                        <input
-                                            className="sr-only"
-                                            id="Option3"
-                                            type="radio"
-                                            name="option"
-                                            value="Suporte"
-                                            checked={formData.option === "Suporte"}
-                                            onChange={handleChange}
-                                        />
-                                        <span className="text-sm">Suporte</span>
                                     </label>
                                 </div>
                             </div>
                             <div>
                                 <label className="sr-only" htmlFor="message">Message</label>
                                 <textarea
-                                    className="w-full rounded-lg border-gray-200 p-3 text-sm"
-                                    placeholder="Mensagem"
+                                    className="w-full rounded-lg border border-gray-200 p-3 text-sm"
+                                    placeholder={
+                                        type === 'Orçamento'
+                                            ? 'Por favor, forneça o máximo de detalhes possível sobre suas necessidades. Quanto mais informações você puder compartilhar, melhor poderemos entender e atender às suas demandas.'
+                                            : 'Tem alguma dúvida? Estamos aqui para ajudar! Por favor, compartilhe conosco quaisquer perguntas ou preocupações que você possa ter. Quanto mais detalhes você fornecer, melhor poderemos entender sua situação e oferecer a orientação necessária.'
+                                    }
                                     id="message"
-                                    value={formData.message}
-                                    onChange={handleChange}
+                                    value={message}
+                                    onChange={(e)=> setMessage(e.target.value)}
+                                    rows={5}
                                 />
                             </div>
                             <div className="mt-4">

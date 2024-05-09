@@ -24,16 +24,16 @@ function LandingPage() {
                 {/*    Serviços*/}
                 {/*</h3>*/}
                 <div className="flex-wrap md:flex-nowrap flex justify-center items-center gap-3 w-full mb-5 md:p-2">
-                    <Card title="Customização" link="/servicos" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer">
+                    <Card title="Customização" link="/servicos#customizacao" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer">
                         <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={customizationIcon} alt="Customização" title="Customização" width={16} height={16}/>
                     </Card>
-                    <Card title="Consultoria" link="/servicos" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer">
+                    <Card title="Consultoria" link="/servicos#consultoria" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer">
                         <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={consultancy} alt="Consultoria" title="Consultoria" width={16} height={16}/>
                     </Card>
-                    <Card title="Projetos" link="/servicos" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer">
+                    <Card title="Projetos" link="/servicos#projetos" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer">
                         <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={projects} alt="Projetos" title="Projetos" width={16} height={16}/>
                     </Card>
-                    <Card title="Site" link="/servicos" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer">
+                    <Card title="Site" link="/servicos#site" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer">
                         <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={site} alt="Site" title="Site" width={16} height={16}/>
                     </Card>
                 </div>

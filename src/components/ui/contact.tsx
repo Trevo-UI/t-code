@@ -41,12 +41,12 @@ function Contact() {
                         </AccordionTrigger>
                         <AccordionContent>
                             <div className="flex flex-col gap-1 mb-8 md:mb-0">
-                                <span>
-                                    <p>Telefone: (47) 98833-9861</p>
-                                </span>
-                                <span>
-                                    <p>E-mail: comercial@tcodesolucoes.com</p>
-                                </span>
+                                <a href="tel:47988339861">
+                                    <b>Telefone:</b> (47) 98833-9861
+                                </a>
+                                <a href="mailto:comercial@tcodesolucoes.com">
+                                    <b>E-mail:</b> comercial@tcodesolucoes.com
+                                </a>
                             </div>
                             <div className="flex items-center gap-2 justify-center md:justify-start">
                                 <a className="flex items-center justify-center rounded-full bg-white w-8 h-8 p-1 hover:opacity-80"

@@ -35,7 +35,7 @@ function Menu({ setPage }: MenuProps) {
             <ul className="flex items-center space-x-4">
                 <li>
                     <Link to="/" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
-                        início
+                        Início
                     </Link>
                 </li>
                 <li>
