@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Cookies() {
     const [cookiesAccepted, setCookiesAccepted] = useState(false);
@@ -18,7 +19,7 @@ function Cookies() {
     return (
         <>
             {!cookiesAccepted && (
-                <div role="alert" className="fixed bottom-0 left-0 md:bottom-5 md:left-5 z-50 rounded-xl border border-gray-100 bg-white p-4 max-w-xl">
+                <div role="alert" className="fixed bottom-0 left-0 md:bottom-5 md:left-5 z-50 rounded-xl border border-gray-100 bg-white p-4 max-w-xl show">
                     <div className="flex items-start gap-4">
                         <span className="text-green-600">
                             <svg width="24" height="24" viewBox="0 -0.5 24 24" xmlns="http://www.w3.org/2000/svg" fill="none">
@@ -41,7 +42,7 @@ function Cookies() {
                                 <button className="block rounded-lg px-4 py-2 text-gray-700 transition bg-gray-100 hover:bg-gray-200" onClick={handleAccept}>
                                     <span className="text-sm">Confirmar</span>
                                 </button>
-                                <a href="https://www.gov.br/anpd/pt-br" target="_blank" className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700">
+                                <Link to="/politica-de-privacidade" className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700">
                                     <span className="text-sm">
                                         Veja mais
                                     </span>
@@ -59,7 +60,7 @@ function Cookies() {
                                             d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
                                         />
                                     </svg>
-                                </a>
+                                </Link>
                             </div>
                         </div>
                         <button className="text-gray-500 transition hover:text-gray-600">
