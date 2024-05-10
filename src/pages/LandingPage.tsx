@@ -21,7 +21,7 @@ function LandingPage() {
 
     return (
         <>
-            <section className={`flex items-center w-full h-96 ${ !imageLoaded ? 'bg-blue-600' : 'bg-[url(\'/banners/banner-landing-page-main.webp\')]' } bg-cover bg-right md:bg-center lg:h-[500px]`}>
+            <section className={`flex items-center w-full h-96 ${ !imageLoaded ? 'bg-blue-600' : `bg-[url('/banners/banner-landing-page-main.webp')]` } bg-cover bg-right md:bg-center lg:h-[500px]`}>
                 <div className="flex flex-col gap-4 w-4/5 mx-auto my-0">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white duration-1000 animate__slideInLeft">
                         T-Code Soluções
