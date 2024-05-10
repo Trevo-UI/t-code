@@ -20,7 +20,7 @@ export const services = [
 export const institutional = [
     {
         description: 'Política de Privacidade',
-        link: '/politica-e-privacidade'
+        link: '/politica-de-privacidade'
     },
     {
         description: 'Sobre nós',

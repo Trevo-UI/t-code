@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
+import { RiExternalLinkFill } from "react-icons/ri";
 
 interface MenuProps {
     setPage: (value: string) => void;
@@ -49,8 +50,9 @@ function Menu({ setPage }: MenuProps) {
                     </Link>
                 </li>
                 <li>
-                    <Link to="/contato" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link to="https://api.whatsapp.com/send?phone=5547984985607&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa" target="_blank" className="flex items-center gap-1 text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
                         Contato
+                        <RiExternalLinkFill className="inline-block text-white text-lg"/>
                     </Link>
                 </li>
             </ul>

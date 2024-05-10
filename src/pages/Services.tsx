@@ -12,18 +12,14 @@ import {
 function Services() {
     const postUrl = window.location.href;
 
-    // const handleOpen = () => {
-    //
-    // }
-
     return (
-        <section className="h-full relative z-[1] py-12">
+        <section className="h-full relative z-[1] py-12 scroll-behavior-smooth">
             {services.map((service, i: number) =>(
-                <div className="w-[calc(100%_-_3rem)] mx-auto max-w-lg lg:max-w-5xl xl:max-w-7xl" key={i} id={service.id}>
+                <div className="w-[calc(100%_-_3rem)] mx-auto max-w-lg lg:max-w-5xl xl:max-w-7xl animate__fadeInUp duration-1000" key={i}>
                     <span className="text-sm text-gray-400 capitalize mb-6 lg:mb-8 flex gap-4 items-center mt-8 after:content-[''] after:h-px after:grow after:bg-gray-900/10"/>
                     <div className="grid grid-cols-12 gap-y-6 lg:gap-0">
                         <div className="col-span-12 lg:col-span-4">
-                            <h2 className="font-bold text-gray-900 text-4xl leading-tight capitalize">
+                            <h2 className="font-bold text-gray-900 text-4xl leading-tight capitalize" id={service.id}>
                                 { service.title }
                             </h2>
                             <p className="text-gray-400">
