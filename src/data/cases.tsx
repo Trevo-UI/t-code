@@ -1,19 +1,19 @@
 export const cases = [
     {
         business: 'Granja Bechtold',
-        image: '/cases/logo-bechtold.png',
+        image: '/cases/logo-bechtold.webp',
         description: '',
         link: ''
     },
     {
         business: 'BrBox',
-        image: '/cases/logo-brbox.jpeg',
+        image: '/cases/logo-brbox.webp',
         description: '',
         link: ''
     },
     {
         business: 'Conttrole Frotas',
-        image: '/cases/logo-conttrole.png',
+        image: '/cases/logo-conttrole.webp',
         description: '',
         link: ''
     }

@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react';
 import Card from '@/components/ui/card';
 import AnimatedVisibility from '@/functions/animatedVisibility.tsx';
 import PlatformBenefits from '@/pages/components/landing-page/platformBenefits';
@@ -8,9 +9,19 @@ import customizationIcon from '@/assets/icons/customizacao.svg';
 import site from '@/assets/icons/site.svg';
 
 function LandingPage() {
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    useEffect(() => {
+        const img = new Image();
+        img.src = '/banners/banner-landing-page-main.webp';
+        img.onload = () => {
+            setImageLoaded(true);
+        };
+    }, []);
+
     return (
         <>
-            <section className="flex items-center w-full h-96 bg-[url('/banners/banner-landing-page-main.png')] bg-cover bg-right md:bg-center lg:h-[500px]">
+            <section className={`flex items-center w-full h-96 ${ !imageLoaded ? 'bg-blue-600' : 'bg-[url(\'/banners/banner-landing-page-main.webp\')]' } bg-cover bg-right md:bg-center lg:h-[500px]`}>
                 <div className="flex flex-col gap-4 w-4/5 mx-auto my-0">
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white duration-1000 animate__slideInLeft">
                         T-Code Soluções
