@@ -13,7 +13,7 @@ function Contact() {
                     <h3 className="text-xl uppercase font-bold mb-2 md:mb-0">Contato</h3>
                     <div className="flex flex-col gap-1 mb-8 md:mb-0">
                         <span>
-                            <p>Telefone: (47) 98833-9861</p>
+                            <p>Telefone: (47) 98498-5607</p>
                         </span>
                         <span>
                             <p>E-mail: comercial@tcodesolucoes.com</p>
@@ -41,8 +41,8 @@ function Contact() {
                         </AccordionTrigger>
                         <AccordionContent>
                             <div className="flex flex-col gap-1 mb-8 md:mb-0">
-                                <a href="tel:47988339861">
-                                    <b>Telefone:</b> (47) 98833-9861
+                                <a href="tel:47984985607">
+                                    <b>Telefone:</b> (47) 98498-5607
                                 </a>
                                 <a href="mailto:comercial@tcodesolucoes.com">
                                     <b>E-mail:</b> comercial@tcodesolucoes.com
