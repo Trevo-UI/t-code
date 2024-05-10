@@ -30,7 +30,6 @@ function Cookies() {
                                 />
                             </svg>
                         </span>
-
                         <div className="flex-1">
                             <strong className="block font-medium text-gray-900">
                                 Política de Privacidade
@@ -63,7 +62,7 @@ function Cookies() {
                                 </Link>
                             </div>
                         </div>
-                        <button className="text-gray-500 transition hover:text-gray-600">
+                        <button className="text-gray-500 transition hover:text-gray-600" onClick={handleAccept}>
                             <span className="sr-only">Dismiss popup</span>
 
                             <svg
