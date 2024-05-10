@@ -8,6 +8,7 @@ function Whatsapp() {
             <div className="flex justify-center items-center fixed bottom-3 right-3 md:bottom-7 md:right-9 w-16 h-16 bg-green-600 rounded-full z-40">
                 <Link
                     to="https://api.whatsapp.com/send?phone=5547984985607&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa"
+                    title="Enviar mensagem no whatsapp"
                     target="_blank"
                     className="flex justify-center items-center w-full h-full"
                 >

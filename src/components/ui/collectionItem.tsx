@@ -9,7 +9,7 @@ interface collectionItemProps {
 
 function collectionItem({ imageMain, imageSecondary, title, description }: collectionItemProps) {
   return (
-      <Link to="/contato" className="group block">
+      <Link to="/contato" title={title ? title : 'item'} className="group block">
           <div className="relative h-[350px] sm:h-[450px]">
               <img src={imageMain} alt="ilustração do serviço" className="absolute inset-0 h-full w-full object-cover opacity-100 group-hover:opacity-0"/>
               <img src={imageSecondary} alt="ilustração do serviço" className="absolute inset-0 h-full w-full object-cover opacity-0 group-hover:opacity-100"/>

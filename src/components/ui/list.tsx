@@ -35,7 +35,7 @@ function List(
                     <ul className="flex flex-col gap-1 mb-8 md:mb-0">
                         {itemsList.map((item: item, i: number) => (
                             <li className="hover:underline" key={i}>
-                                <Link to={item.link}>
+                                <Link to={item.link} title={item.description ? item.description : 'item da lista'}>
                                     { item.description }
                                 </Link>
                             </li>
@@ -54,7 +54,7 @@ function List(
                             <ul className="flex flex-col gap-2">
                             {itemsList.map((item: item, i: number) => (
                                 <li className="text-md" key={i}>
-                                    <Link to={item.link}>
+                                    <Link to={item.link} title={item.description ? item.description : 'item'}>
                                         {item.description}
                                     </Link>
                                 </li>

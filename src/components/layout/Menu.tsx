@@ -35,22 +35,22 @@ function Menu({ setPage }: MenuProps) {
         <nav>
             <ul className="flex items-center space-x-4">
                 <li>
-                    <Link to="/" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link to="/" title="Voltar ao início" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
                         Início
                     </Link>
                 </li>
                 <li>
-                    <Link to="/sobre-a-empresa" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link to="/sobre-a-empresa" title="Saiba mais sobre a empresa" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
                         Empresa
                     </Link>
                 </li>
                 <li>
-                    <Link to="/servicos" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link to="/servicos" title="Veja nossos serviços" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
                         Serviços
                     </Link>
                 </li>
                 <li>
-                    <Link to="https://api.whatsapp.com/send?phone=5547984985607&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa" target="_blank" className="flex items-center gap-1 text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link title="Enviar mensagem no whatsapp" to="https://api.whatsapp.com/send?phone=5547984985607&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa" target="_blank" className="flex items-center gap-1 text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
                         Contato
                         <RiExternalLinkFill className="inline-block text-white text-lg"/>
                     </Link>

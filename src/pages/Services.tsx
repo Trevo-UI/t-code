@@ -43,7 +43,8 @@ function Services() {
                                 </div>
                                 <div className="flex items-center justify-between">
                                     <a className="bg-blue-700 text-white shadow-md text-[1em] px-4 py-2 rounded-md relative inline-flex justify-center items-center whitespace-nowrap cursor-pointer no-underline leading-tight transition-all duration-200 hover:bg-indigo-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-700"
-                                       href="/contato"
+                                       title="Chamar no whatsapp"
+                                       href="https://api.whatsapp.com/send?phone=5547984985607&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa"
                                        target="_blank">
                                         Contato
                                     </a>

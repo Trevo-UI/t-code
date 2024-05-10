@@ -26,10 +26,10 @@ function About() {
                         </p>
                     </span>
                     <div className="mt-8 flex flex-wrap justify-center gap-4 text-center animate__fadeIn duration-1000">
-                        <Link to="/servicos" className="block w-full rounded bg-blue-700 px-12 py-3 text-sm font-medium text-white shadow hover:bg-gray-900 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto">
+                        <Link to="/servicos" title="Ver serviços" className="block w-full rounded bg-blue-700 px-12 py-3 text-sm font-medium text-white shadow hover:bg-gray-900 focus:outline-none focus:ring active:bg-rose-500 sm:w-auto">
                             Serviços
                         </Link>
-                        <Link to="/contato" className="block w-full rounded bg-green-500 px-12 py-3 text-sm font-medium text-white shadow hover:text-gray-900 focus:outline-none focus:ring active:text-rose-500 sm:w-auto">
+                        <Link title="Chamar no whatsapp" to="https://api.whatsapp.com/send?phone=5547984985607&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa" className="block w-full rounded bg-green-500 px-12 py-3 text-sm font-medium text-white shadow hover:text-gray-900 focus:outline-none focus:ring active:text-rose-500 sm:w-auto">
                             Contato
                         </Link>
                     </div>

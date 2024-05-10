@@ -54,8 +54,7 @@ function NotFound() {
                 <p className="mt-4 text-gray-500">
                     Desculpe, mas a página solicitada não existe...
                 </p>
-                <Link to="/"
-                      className="mt-6 inline-block rounded bg-blue-700 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring">
+                <Link to="/" title="Voltar ao início" className="mt-6 inline-block rounded bg-blue-700 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring">
                     Voltar ao início
                 </Link>
             </div>

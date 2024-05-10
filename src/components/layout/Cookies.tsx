@@ -38,10 +38,10 @@ function Cookies() {
                                 Protegendo sua privacidade! Utilizamos cookies para personalizar sua experiência. Ao continuar, você aceita nossa política de privacidade.
                             </p>
                             <div className="mt-4 flex gap-2">
-                                <button className="block rounded-lg px-4 py-2 text-gray-700 transition bg-gray-100 hover:bg-gray-200" onClick={handleAccept}>
+                                <button className="block rounded-lg px-4 py-2 text-gray-700 transition bg-gray-100 hover:bg-gray-200" onClick={handleAccept} aria-label="Confirmar">
                                     <span className="text-sm">Confirmar</span>
                                 </button>
-                                <Link to="/politica-de-privacidade" className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700">
+                                <Link to="/politica-de-privacidade" title="Saiba mais sobre política e privacidade" className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700">
                                     <span className="text-sm">
                                         Veja mais
                                     </span>
@@ -62,9 +62,8 @@ function Cookies() {
                                 </Link>
                             </div>
                         </div>
-                        <button className="text-gray-500 transition hover:text-gray-600" onClick={handleAccept}>
-                            <span className="sr-only">Dismiss popup</span>
-
+                        <button className="text-gray-500 transition hover:text-gray-600" onClick={handleAccept} aria-label="Fechar Cookies">
+                            <span className="sr-only">Fechar popup</span>
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 fill="none"

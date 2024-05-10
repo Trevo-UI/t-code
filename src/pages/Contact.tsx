@@ -55,7 +55,7 @@ function Contact() {
                         <div className="mt-8">
                             <b>Horário de Atendimento:</b> Segunda a Sexta, das 9h às 18h. <br/>
                             <address className="not-italic"><b>Endereço:</b> Rio do Sul, SC - 89160-000.</address>
-                            <b>Telefone:</b> <a className="hover:underline" href="tel:47984985607">(47) 98498-5607</a><br/>
+                            <b>Telefone:</b> <a className="hover:underline" href="tel:47984985607" title="telefone">(47) 98498-5607</a><br/>
                         </div>
                     </div>
                     <div className="rounded-lg bg-white p-8 shadow-lg lg:col-span-3 lg:p-12">
@@ -141,8 +141,7 @@ function Contact() {
                                 />
                             </div>
                             <div className="mt-4">
-                                <button type="submit"
-                                        className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
+                                <button type="submit" aria-label="Enviar" className="inline-block w-full rounded-lg bg-black px-5 py-3 font-medium text-white sm:w-auto">
                                     Enviar
                                 </button>
                             </div>

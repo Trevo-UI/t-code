@@ -200,6 +200,7 @@ const CarouselPrevious = React.forwardRef<
 
   return (
     <Button
+      aria-label="Voltar"
       ref={ref}
       variant={variant}
       size={size}
@@ -215,7 +216,7 @@ const CarouselPrevious = React.forwardRef<
       {...props}
     >
       <ArrowLeft className="h-4 w-4" />
-      <span className="sr-only">Previous slide</span>
+      <span className="sr-only">Voltar</span>
     </Button>
   )
 })
@@ -229,6 +230,7 @@ const CarouselNext = React.forwardRef<
 
   return (
     <Button
+      aria-label="Próximo"
       ref={ref}
       variant={variant}
       size={size}
@@ -244,7 +246,7 @@ const CarouselNext = React.forwardRef<
       {...props}
     >
       <ArrowRight className="h-4 w-4" />
-      <span className="sr-only">Next slide</span>
+      <span className="sr-only">Próximo</span>
     </Button>
   )
 })

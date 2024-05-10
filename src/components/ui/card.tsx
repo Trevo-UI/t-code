@@ -12,7 +12,7 @@ interface Props {
 function Card({ title, children, className, link }: Props) {
     return (
         <>
-            <Link to={link ? link : '/'} className={`relative card ${className}`}>
+            <Link to={link ? link : '/'} title={title ? title : 'Card'} className={`relative card ${className}`}>
                 <div className="overlay" ></div>
                 <div className="circle">
                     { children }
