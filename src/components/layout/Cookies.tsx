@@ -43,7 +43,7 @@ function Cookies() {
                                 </button>
                                 <Link to="/politica-de-privacidade" title="Saiba mais sobre política e privacidade" className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-2 text-white hover:bg-indigo-700">
                                     <span className="text-sm">
-                                        Veja mais
+                                        Termos de Uso
                                     </span>
                                     <svg
                                         xmlns="http://www.w3.org/2000/svg"
