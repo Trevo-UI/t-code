@@ -22,7 +22,7 @@ function MenuMobile() {
                 <MenubarContent className="bg-blue-700 w-screen rounded-none mt-5 border-none">
                     <Link to="/" title="Voltar ao início" className="text-white">
                         <MenubarItem>
-                            início
+                            Início
                             <MenubarShortcut className="text-white">
                                 <AiFillHome className="text-white"/>
                             </MenubarShortcut>
