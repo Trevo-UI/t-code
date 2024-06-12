@@ -52,7 +52,7 @@ function Footer() {
             </section>
             <section className="flex justify-center text-center bg-blue-900">
                 <p className="py-2 text-sm w-4/5">
-                    © 2024 T-Code Soluções Tecnológicas. Todos os direitos reservados.
+                    © 2024 T-Code Soluções Tecnológicas LTDA - 51.946.998/0001-52. Todos os direitos reservados.
                 </p>
             </section>
         </footer>
