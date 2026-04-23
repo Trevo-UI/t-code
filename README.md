@@ -2,6 +2,28 @@
 
 Site institucional (React + Vite): páginas de serviços, projetos, contato e política de privacidade. API opcional em Express para envio de email (SendGrid).
 
+## Deploy estático no Coolify
+
+O front é SPA e pode ser publicado como site estático no Coolify.
+
+### Opção recomendada: Dockerfile (já pronto no repositório)
+
+Este projeto inclui:
+
+- `Dockerfile` (build com Node 20 + entrega com Nginx)
+- `nginx.conf` com fallback SPA (`try_files ... /index.html`)
+
+No Coolify, crie um app a partir do repositório e use o `Dockerfile` da raiz.
+
+### Opção sem Docker (Static Site builder)
+
+Se preferir o modo estático do Coolify:
+
+- **Build command:** `npm ci && npm run build`
+- **Publish directory:** `dist`
+
+Importante: nesse modo, garanta fallback de rotas para `index.html` no servidor da stack escolhida, pois o app usa `BrowserRouter`.
+
 ## Stack principal e versões
 
 Valores alinhados ao `package.json` do repositório (caret `^` permite patches/minor mais novos no `npm install`).
@@ -43,6 +65,8 @@ npm start
 ```
 
 Sobe o front com `vite serve` e o servidor em `src/api/server.cjs` em paralelo. Exige variáveis de ambiente conforme o código da API (por exemplo `SENDGRID_API_KEY`, `CORS_ORIGIN`, `PORT`).
+
+Para deploy estritamente estático (Coolify Static/Docker + Nginx), o backend de email não é necessário.
 
 ## Testes e checagens
 
