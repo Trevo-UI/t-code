@@ -59,7 +59,7 @@ app.post('/send-email', function (req, res) { return __awaiter(void 0, void 0, v
                         {
                             to: [
                                 {
-                                    email: 'comercial@tcodesolucoes.com' // e-mail do destinatário
+                                    email: 'comercial@tcodesolucoes.com' // email do destinatário
                                 },
                             ],
                             subject: type
@@ -72,11 +72,11 @@ app.post('/send-email', function (req, res) { return __awaiter(void 0, void 0, v
                     content: [
                         {
                             type: 'text/plain',
-                            value: "\n                    Nome: ".concat(name, "\n                    E-mail: ").concat(email, "\n                    Telefone: ").concat(phone, "\n                    Tipo: ").concat(type, "\n                    Mensagem: ").concat(message, "\n                ")
+                            value: "\n                    Nome: ".concat(name, "\n                    Email: ").concat(email, "\n                    Telefone: ").concat(phone, "\n                    Tipo: ").concat(type, "\n                    Mensagem: ").concat(message, "\n                ")
                         },
                         {
                             type: "text/html",
-                            value: "\n                    <p><strong>Nome:</strong> ".concat(name, "</p>\n                    <p><strong>E-mail:</strong> ").concat(email, "</p>\n                    <p><strong>Telefone:</strong> ").concat(phone, "</p>\n                    <p><strong>Tipo:</strong> ").concat(type, "</p>\n                    <p><strong>Mensagem:</strong> ").concat(message, "</p>\n                ")
+                            value: "\n                    <p><strong>Nome:</strong> ".concat(name, "</p>\n                    <p><strong>Email:</strong> ").concat(email, "</p>\n                    <p><strong>Telefone:</strong> ").concat(phone, "</p>\n                    <p><strong>Tipo:</strong> ").concat(type, "</p>\n                    <p><strong>Mensagem:</strong> ").concat(message, "</p>\n                ")
                         }
                     ]
                 };
@@ -95,13 +95,13 @@ app.post('/send-email', function (req, res) { return __awaiter(void 0, void 0, v
                     res.status(200).json({ success: true });
                 }
                 else {
-                    res.status(response.status).json({ success: false, message: 'Erro ao enviar e-mail' });
+                    res.status(response.status).json({ success: false, message: 'Erro ao enviar email' });
                 }
                 return [3 /*break*/, 4];
             case 3:
                 error_1 = _b.sent();
-                console.error('Erro ao enviar e-mail:', error_1);
-                res.status(500).json({ success: false, message: 'Erro ao enviar e-mail' });
+                console.error('Erro ao enviar email:', error_1);
+                res.status(500).json({ success: false, message: 'Erro ao enviar email' });
                 return [3 /*break*/, 4];
             case 4: return [2 /*return*/];
         }

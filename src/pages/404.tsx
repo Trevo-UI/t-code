@@ -48,13 +48,13 @@ function NotFound() {
                              fill="hsl(230, 13%, 9%)"/>
                     <ellipse id="i-fof-radar-top" cx="260" cy="106" rx="64" ry="6" fill="#1d4ed8"/>
                 </svg>
-                <p className="text-2xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                <p className="text-2xl font-bold text-gray-900 sm:text-3xl">
                     Não encontrado
                 </p>
-                <p className="mt-4 text-gray-500">
-                    Desculpe, mas a página solicitada não existe...
+                <p className="mx-auto mt-4 max-w-md text-center text-base text-gray-600 sm:text-lg">
+                    Desculpe, mas a página solicitada não existe.
                 </p>
-                <Link to="/" title="Voltar ao início" className="mt-6 inline-block rounded bg-blue-700 px-5 py-3 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring">
+                <Link to="/" title="Voltar ao início" className="mt-6 inline-block rounded bg-blue-700 px-5 py-3 text-sm font-medium text-white transition hover:bg-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-400">
                     Voltar ao início
                 </Link>
             </div>

@@ -2,28 +2,28 @@ import { policyAndPrivacy } from '@/data/policyAndPrivacy.tsx';
 
 function PolicyAndPrivacy() {
     return (
-        <section className="h-full md:h-screen relative z-[1] py-8 lg:py-12">
-            <div className="w-[calc(100%_-_2.5rem)] lg:w-[calc(100%_-_4rem)] mx-auto max-w-lg md:max-w-3xl lg:max-w-5xl">
-                <div className="mb-8 animate__zoomIn duration-1000">
-                    <h1 className="text-4xl text-center">Política de Privacidade</h1>
+        <section className="relative z-[1] min-h-full bg-gray-100 py-8 pt-24 sm:pt-28 md:min-h-screen lg:py-12">
+            <div className="mx-auto w-full max-w-screen-2xl px-4 sm:px-6 lg:px-10">
+                <div className="mb-12 text-center sm:mb-14">
+                    <h1 className="text-page-title">Política de Privacidade</h1>
                 </div>
-                <ol className="text-points grid grid-cols-12 gap-y-8 lg:gap-12">
+                <div className="grid w-full grid-cols-1 gap-12 sm:gap-14 lg:grid-cols-2 lg:gap-x-12 lg:gap-y-16">
                     {policyAndPrivacy.map((item, index: number) => (
-                        <li className="text-points__item col-span-12 lg:col-span-6 animate__slideInUp duration-1000" key={index}>
-                            <div className="text-points__text">
-                                <h4 className="text-xl mb-1">
+                        <div className="min-w-0" key={index}>
+                            <div>
+                                <h2 className="text-page-section mb-3 sm:mb-4">
                                     {item.title}
-                                </h4>
-                                <p className="text-sm text-gray-500">
+                                </h2>
+                                <p className="text-page-block">
                                     {item.description}
                                 </p>
                             </div>
-                        </li>
+                        </div>
                     ))}
-                </ol>
+                </div>
             </div>
         </section>
-    )
+    );
 }
 
 export default PolicyAndPrivacy;

@@ -6,5 +6,5 @@ body {
 
 #root {
     text-rendering: optimizeLegibility;
-    font-family: Inter,system-ui,Avenir,Helvetica,Arial,sans-serif;
+    font-family: inherit;
 }

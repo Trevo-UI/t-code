@@ -1,10 +1,18 @@
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import Cookies from '@/components/layout/Cookies';
 import router from '@/routes/router';
-import Whatsapp from '@/components/ui/whatsapp';
+import { getDocumentTitle } from '@/seo/documentTitle';
 
 function Structure() {
+    const { pathname } = useLocation();
+
+    useEffect(() => {
+        document.title = getDocumentTitle(pathname);
+    }, [pathname]);
+
     return (
         <>
             <Header/>
@@ -13,7 +21,6 @@ function Structure() {
             </main>
             <Footer/>
             <Cookies/>
-            <Whatsapp/>
         </>
     )
 }

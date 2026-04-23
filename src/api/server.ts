@@ -22,7 +22,7 @@ app.post('/send-email', async (req, res) => {
             {
                 to: [
                     {
-                        email: 'comercial@tcodesolucoes.com' // e-mail do destinatário
+                        email: 'comercial@tcodesolucoes.com' // email do destinatário
                     },
                 ],
                 subject: type
@@ -37,7 +37,7 @@ app.post('/send-email', async (req, res) => {
                 type: 'text/plain',
                 value: `
                     Nome: ${name}
-                    E-mail: ${email}
+                    Email: ${email}
                     Telefone: ${phone}
                     Tipo: ${type}
                     Mensagem: ${message}
@@ -47,7 +47,7 @@ app.post('/send-email', async (req, res) => {
                 type: "text/html",
                 value: `
                     <p><strong>Nome:</strong> ${name}</p>
-                    <p><strong>E-mail:</strong> ${email}</p>
+                    <p><strong>Email:</strong> ${email}</p>
                     <p><strong>Telefone:</strong> ${phone}</p>
                     <p><strong>Tipo:</strong> ${type}</p>
                     <p><strong>Mensagem:</strong> ${message}</p>
@@ -67,11 +67,11 @@ app.post('/send-email', async (req, res) => {
         if (response.status === 200) {
             res.status(200).json({ success: true });
         } else {
-            res.status(response.status).json({ success: false, message: 'Erro ao enviar e-mail' });
+            res.status(response.status).json({ success: false, message: 'Erro ao enviar email' });
         }
     } catch (error) {
-        console.error('Erro ao enviar e-mail:', error);
-        res.status(500).json({ success: false, message: 'Erro ao enviar e-mail' });
+        console.error('Erro ao enviar email:', error);
+        res.status(500).json({ success: false, message: 'Erro ao enviar email' });
     }
 });
 

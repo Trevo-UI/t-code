@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { Link, useLocation } from "react-router-dom";
-import { RiExternalLinkFill } from "react-icons/ri";
+import { WHATSAPP_URL } from '@/config/site';
 
 interface MenuProps {
     setPage: (value: string) => void;
@@ -33,27 +33,37 @@ function Menu({ setPage }: MenuProps) {
 
     return (
         <nav>
-            <ul className="flex items-center space-x-4">
+            <ul className="flex items-center gap-6 text-base font-medium text-white">
                 <li>
-                    <Link to="/" title="Voltar ao início" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link to="/" title="Voltar ao início" className="underline-offset-8 transition hover:underline">
                         Início
                     </Link>
                 </li>
                 <li>
-                    <Link to="/sobre-a-empresa" title="Saiba mais sobre a empresa" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link to="/sobre-a-empresa" title="Saiba mais sobre a empresa" className="underline-offset-8 transition hover:underline">
                         Empresa
                     </Link>
                 </li>
                 <li>
-                    <Link to="/servicos" title="Veja nossos serviços" className="text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
+                    <Link to="/servicos" title="Veja nossos serviços" className="underline-offset-8 transition hover:underline">
                         Serviços
                     </Link>
                 </li>
                 <li>
-                    <Link title="Enviar mensagem no whatsapp" to="https://api.whatsapp.com/send?phone=5547984985607&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa" target="_blank" className="flex items-center gap-1 text-white text-lg ease-in duration-200 underline-offset-8 hover:underline">
-                        Contato
-                        <RiExternalLinkFill className="inline-block text-white text-lg"/>
+                    <Link to="/projetos" title="Projetos desenvolvidos" className="underline-offset-8 transition hover:underline">
+                        Projetos
                     </Link>
+                </li>
+                <li>
+                    <a
+                        title="Chamar no WhatsApp"
+                        href={WHATSAPP_URL}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="underline-offset-8 transition hover:underline"
+                    >
+                        Contato
+                    </a>
                 </li>
             </ul>
         </nav>

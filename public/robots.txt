@@ -1,7 +1,9 @@
-# Diretivas Gerais
+# Diretivas gerais
 User-agent: *
-Disallow: /admin/              # Desativa o acesso a diretórios administrativos
-Disallow: /login/              # Desativa o acesso à página de login
-Disallow: /cgi-bin/            # Desativa o acesso a diretórios CGI-BIN
-Disallow: /tmp/                # Desativa o acesso a diretórios temporários
-Disallow: /private/            # Desativa o acesso a diretórios privados
+Disallow: /admin/
+Disallow: /login/
+Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /private/
+
+Sitemap: https://www.tcodesolucoes.com/sitemap.xml

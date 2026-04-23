@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { CgMenu } from "react-icons/cg";
 import { AiFillHome } from "react-icons/ai";
-import { BsFillPeopleFill, BsGearFill, BsFillPhoneFill } from "react-icons/bs";
+import { BsFillPeopleFill, BsGearFill, BsFolder2Open } from "react-icons/bs";
 import {
     Menubar,
     MenubarContent,
@@ -11,6 +11,7 @@ import {
     MenubarShortcut,
     MenubarTrigger,
 } from "@/components/ui/menubar"
+import { WHATSAPP_URL } from '@/config/site';
 
 function MenuMobile() {
     return (
@@ -48,14 +49,26 @@ function MenuMobile() {
                         </MenubarItem>
                     </Link>
                     <MenubarSeparator />
-                    <Link title="Enviar mensagem no whatsapp" to="https://api.whatsapp.com/send?phone=5547984985607&text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20para%20minha%20empresa" target="_blank" className="text-white">
+                    <Link to="/projetos" title="Projetos desenvolvidos" className="text-white">
                         <MenubarItem>
-                            Contato
+                            Projetos
                             <MenubarShortcut className="text-white">
-                                <BsFillPhoneFill className="text-white"/>
+                                <BsFolder2Open className="text-white"/>
                             </MenubarShortcut>
                         </MenubarItem>
                     </Link>
+                    <MenubarSeparator />
+                    <a
+                        href={WHATSAPP_URL}
+                        title="Chamar no WhatsApp"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-white"
+                    >
+                        <MenubarItem className="text-base font-medium">
+                            Contato
+                        </MenubarItem>
+                    </a>
                 </MenubarContent>
             </MenubarMenu>
         </Menubar>

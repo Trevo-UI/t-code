@@ -1,71 +1,61 @@
-import { TfiWallet } from "react-icons/tfi";
-import { TbMessage2Question } from "react-icons/tb";
-import { FaRegLightbulb } from "react-icons/fa";
-import { CgWebsite } from "react-icons/cg";
+import { MessageCircle, Wallet, Wrench } from 'lucide-react';
+import { WHATSAPP_URL } from '@/config/site';
+
+const items = [
+    {
+        icon: Wrench,
+        title: 'Negócio em qualquer etapa',
+        text: 'Sistemas personalizados para o tamanho e a maturidade da sua operação: do MVP ao crescimento com integrações e automação.',
+    },
+    {
+        icon: Wallet,
+        title: 'Orçamento sem surpresa',
+        text: 'Definimos escopo, prazo e forma de acompanhamento com transparência. O primeiro contato para orçamento ou alinhamento não cria compromisso.',
+    },
+    {
+        icon: MessageCircle,
+        title: 'Código, deploy e manutenção',
+        text: 'Fazer o software é um passo; manter no ar com segurança, desempenho e suporte contínuo é outro. Ajudamos a fechar o ciclo após a publicação.',
+    },
+] as const;
 
 function PlatformBenefits() {
     return (
-        <div className="w-[92%] md:w-5/6 px-0 py-8 mx-auto sm:py-12 lg:my-0 lg:px-8 lg:py-16">
-            <div className="w-full mb-16">
-                <h2 className="text-center md:text-left text-2xl font-bold md:text-3xl lg:text-4xl">
-                    Por que nossa solução é a ideal para você
-                </h2>
+        <div className="mx-auto w-full max-w-screen-2xl px-4 py-16 sm:px-6 sm:py-20 lg:px-10 lg:py-24">
+            <div className="mb-10 sm:mb-12">
+                <h2 className="text-2xl font-bold tracking-tight text-white sm:text-3xl">Perguntas comuns</h2>
+                <p className="mt-2 max-w-2xl text-sm text-slate-300/95 sm:text-base">
+                    O que a gente mais escuta em conversa com clientes (e como costumamos ajudar).
+                </p>
             </div>
-            <div className="flex flex-wrap gap-10">
-                <div className="flex items-start gap-4 w-full md:w-[48%]">
-                    <span className="shrink-0 rounded-lg bg-blue-900 p-4">
-                        <FaRegLightbulb className="h-5 w-5"/>
-                    </span>
-                    <div>
-                        <h2 className="text-lg font-bold">Você tem uma ideia ou está começando um negócio agora?</h2>
-                        <p className="mt-1 text-md text-gray-300">
-                            Não tem problema, trabalhamos com sistemas personalizados para atender os objetivos da sua
-                            empresa, independente do tamanho dela.
-                        </p>
-                    </div>
-                </div>
-                <div className="flex justify-end text-start items-start gap-4 w-full md:w-[48%]">
-                    <span className="shrink-0 rounded-lg bg-blue-900 p-4">
-                        <TfiWallet className="h-5 w-5"/>
-                    </span>
-                    <div>
-                        <h2 className="text-lg font-bold">Esses serviços devem estar fora do meu orçamento</h2>
-                        <p className="mt-1 text-md text-gray-300">
-                            Será mesmo? Como nossas soluções são personalizadas, os valores também são, podendo se
-                            encaixar no seu bolso.
-                            E você pode fazer um orçamento sem compromisso nenhum, só para tirar a dúvida.
-                        </p>
-                    </div>
-                </div>
-                <div className="flex items-start gap-4 w-full md:w-[48%]">
-                    <span className="shrink-0 rounded-lg bg-blue-900 p-4">
-                        <TbMessage2Question className="h-5 w-5"/>
-                    </span>
-                    <div>
-                        <h2 className="text-lg font-bold"> Meu negócio precisa mesmo de um sistema?</h2>
-                        <p className="mt-1 text-md text-gray-300">
-                            Sistemas em geral tem o objetivo de ajudar você no dia a dia, tornando sua rotina mais
-                            tranquila, segura, ágil e permitindo você focar em coisas mais importantes.
-                            Se você quer tornar ela escalável e alcançar mais clientes é indispensável a utilização de
-                            um sistema.
-                        </p>
-                    </div>
-                </div>
-                <div className="flex justify-end text-start items-start gap-4 w-full md:w-[48%]">
-                    <span className="shrink-0 rounded-lg bg-blue-900 p-4">
-                        <CgWebsite className="h-5 w-5"/>
-                    </span>
-                    <div>
-                        <h2 className="text-lg font-bold">Será que eu faço um site?</h2>
-                        <p className="mt-1 text-md text-gray-300">
-                            "Quem não é visto, não é lembrado”, desde a criação do Google todo mundo utiliza ele como mecanismo de busca para encontrar aquela empresa referência no mercado e ver as opiniões dos clientes ou aquele estabelecimento comercial para ver onde está localizado.
-                            Por isso seu negócio precisa de um site, estar no digital é uma obrigação.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <ul className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-5 lg:grid-cols-3">
+                {items.map(({ icon: Icon, title, text }) => (
+                    <li key={title}>
+                        <article className="flex h-full flex-col rounded-2xl border border-white/10 bg-white/[0.06] p-5 shadow-sm backdrop-blur-sm sm:p-6">
+                            <span className="mb-4 flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-white">
+                                <Icon className="h-5 w-5" strokeWidth={1.75} aria-hidden />
+                            </span>
+                            <h3 className="text-base font-semibold text-white sm:text-lg">{title}</h3>
+                            <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-200/90 sm:text-[0.95rem]">
+                                {text}
+                            </p>
+                        </article>
+                    </li>
+                ))}
+            </ul>
+            <p className="mt-8 text-center sm:mt-10">
+                <a
+                    href={WHATSAPP_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm font-medium text-white/95 underline decoration-white/30 underline-offset-4 transition hover:decoration-white"
+                >
+                    <MessageCircle className="h-4 w-4" aria-hidden />
+                    Tirar dúvidas no WhatsApp
+                </a>
+            </p>
         </div>
-    )
+    );
 }
 
 export default PlatformBenefits;

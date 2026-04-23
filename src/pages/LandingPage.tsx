@@ -1,66 +1,61 @@
-import { useEffect, useState } from 'react';
-import Card from '@/components/ui/card';
-import AnimatedVisibility from '@/functions/animatedVisibility.tsx';
+import LandingHero from '@/pages/components/landing-page/LandingHero';
+import LandingServicesGrid from '@/pages/components/landing-page/LandingServicesGrid';
 import PlatformBenefits from '@/pages/components/landing-page/platformBenefits';
-import Cases from '@/pages/components/landing-page/cases';
-import consultancy from '@/assets/icons/consultoria.svg';
-import projects from '@/assets/icons/projeto.svg';
-import customizationIcon from '@/assets/icons/customizacao.svg';
-import site from '@/assets/icons/site.svg';
+import ProjectsTeaser from '@/pages/components/landing-page/projectsTeaser';
+import AnimatedVisibility from '@/functions/animatedVisibility.tsx';
+import { MessageCircle } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { WHATSAPP_URL } from '@/config/site';
 
 function LandingPage() {
-    const [imageLoaded, setImageLoaded] = useState(false);
-
-    useEffect(() => {
-        const img = new Image();
-        img.src = '/banners/banner-landing-page-main.webp';
-        img.onload = () => {
-            setImageLoaded(true);
-        };
-    }, []);
-
     return (
-        <>
-            <section className={`flex items-center w-full h-96 ${ !imageLoaded ? 'bg-blue-600' : `bg-[url('/banners/banner-landing-page-main.webp')]` } bg-cover bg-right md:bg-center lg:h-[500px]`}>
-                <div className="flex flex-col gap-4 w-4/5 mx-auto my-0">
-                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white duration-1000 animate__slideInLeft">
-                        T-Code Soluções
-                    </h2>
-                    <p className="text-lg md:text-xl lg:text-2xl text-white w-80 duration-1000 animate__slideInUp">
-                        Criamos a solução que a sua empresa necessita.
+        <div className="w-full">
+            <LandingHero />
+
+            <LandingServicesGrid />
+
+            <section className="bg-slate-900 text-white" aria-label="Dúvidas frequentes">
+                <AnimatedVisibility animation="animate__fadeInUp duration-1000">
+                    <PlatformBenefits />
+                </AnimatedVisibility>
+            </section>
+
+            <section className="border-t border-gray-200/80 bg-gray-50/90">
+                <AnimatedVisibility animation="animate__fadeInUp duration-1000">
+                    <ProjectsTeaser />
+                </AnimatedVisibility>
+            </section>
+
+            <section
+                className="border-t border-gray-200/80 bg-gradient-to-b from-slate-900 to-slate-950 text-white"
+                aria-label="Contato"
+            >
+                <div className="mx-auto flex w-full max-w-screen-2xl flex-col items-start justify-between gap-6 px-4 py-10 sm:flex-row sm:items-center sm:px-6 sm:py-12 lg:px-10">
+                    <p className="max-w-xl text-sm leading-relaxed text-slate-200 sm:text-base">
+                        Precisa alinhar escopo, revisar o que está em produção ou montar a próxima entrega? Na T-Code,
+                        priorizamos o atendimento pelo{' '}
+                        <span className="whitespace-nowrap">WhatsApp</span>.
                     </p>
+                    <div className="flex w-full flex-col gap-2 sm:w-auto sm:flex-row sm:gap-3">
+                        <a
+                            href={WHATSAPP_URL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-100 sm:w-auto"
+                        >
+                            <MessageCircle className="h-4 w-4" aria-hidden />
+                            WhatsApp
+                        </a>
+                        <Link
+                            to="/sobre-a-empresa"
+                            className="inline-flex w-full items-center justify-center rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition hover:border-white/40 hover:bg-white/5 sm:w-auto"
+                        >
+                            Conhecer a empresa
+                        </Link>
+                    </div>
                 </div>
             </section>
-            <section className="flex flex-col justify-center items-center gap-4 my-14 py-4 w-full h-fit md:h-fit">
-                {/*<h3 className="underline-offset-8 underline text-2xl font-bold my-5 text-white bg-blue-700 p-2 rounded-sm">*/}
-                {/*    Serviços*/}
-                {/*</h3>*/}
-                <div className="flex-wrap md:flex-nowrap flex justify-center items-center gap-3 w-full mb-5 md:p-2">
-                    <Card title="Customização" link="/servicos#customizacao" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer duration-1000 animate__slideInUp">
-                        <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={customizationIcon} alt="Customização" title="Customização" width={16} height={16}/>
-                    </Card>
-                    <Card title="Consultoria" link="/servicos#consultoria" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer duration-1000 animate__slideInUp">
-                        <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={consultancy} alt="Consultoria" title="Consultoria" width={16} height={16}/>
-                    </Card>
-                    <Card title="Projetos" link="/servicos#projetos" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer duration-1000 animate__slideInUp">
-                        <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={projects} alt="Projetos" title="Projetos" width={16} height={16}/>
-                    </Card>
-                    <Card title="Site" link="/servicos#site" className="variant-gray rounded-md w-[45%] md:w-[30%] md:rounded-sm cursor-pointer duration-1000 animate__slideInUp">
-                        <img className="w-8 h-8 md:w-12 md:h-12 z-10" src={site} alt="Site" title="Site" width={16} height={16}/>
-                    </Card>
-                </div>
-            </section>
-            <section className="bg-blue-700 text-white">
-                <AnimatedVisibility animation="animate__slideInLeft">
-                    <PlatformBenefits/>
-                </AnimatedVisibility>
-            </section>
-            <section className="flex bg-gray-100 text-black flex-col justify-center border-t-4 gap-5 w-full h-fit p-5">
-                <AnimatedVisibility animation="animate__fadeInRight">
-                    <Cases/>
-                </AnimatedVisibility>
-            </section>
-        </>
+        </div>
     );
 }
 

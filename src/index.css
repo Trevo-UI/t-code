@@ -71,6 +71,40 @@
       @apply border-border;
     }
     body {
-      @apply bg-background text-foreground;
+      @apply bg-background font-sans text-foreground antialiased;
+    }
+  }
+
+  @layer components {
+    .text-page-title {
+      @apply text-3xl font-extrabold tracking-tight text-gray-900 sm:text-4xl lg:text-5xl;
+    }
+    .text-page-subtitle {
+      @apply text-lg font-bold text-gray-800 sm:text-xl;
+    }
+    .text-page-lead {
+      @apply text-lg text-gray-600 sm:text-xl leading-relaxed;
+    }
+    .text-page-body {
+      @apply text-base text-gray-800 sm:text-lg leading-relaxed;
+    }
+    .text-page-muted {
+      @apply text-sm text-gray-600;
+    }
+    .text-page-section {
+      @apply text-xl font-bold text-gray-900 sm:text-2xl;
+    }
+    .text-page-h2 {
+      @apply text-xl font-bold text-gray-900 sm:text-2xl lg:text-3xl;
+    }
+    .text-page-link {
+      @apply font-medium text-blue-800 underline-offset-2 decoration-blue-800/30 hover:underline;
+    }
+    /** Blocos de texto: corpo padrão + alinhamento justificado (preenche a linha de forma legível). */
+    .text-page-block {
+      @apply text-base text-gray-800 sm:text-lg leading-relaxed text-justify hyphens-manual sm:hyphens-auto;
+    }
+    .text-page-block-invert {
+      @apply text-base sm:text-lg leading-relaxed text-justify text-white/90 hyphens-manual sm:hyphens-auto;
     }
   }
